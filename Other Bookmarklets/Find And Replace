@@ -1,0 +1,8 @@
+javascript:(function() {
+  var searchTerm = prompt('Enter the search term:');
+  var replaceText = prompt('Enter the replacement text:');
+  if (searchTerm && replaceText) {
+    var regex = new RegExp(searchTerm, 'gi');
+    document.body.innerHTML = document.body.innerHTML.replace(regex, replaceText);
+  }
+})();
