@@ -1,0 +1,39 @@
+javascript:(function() {
+  var siteData = [
+    'cookies',
+    'localStorage',
+    'sessionStorage',
+    'indexedDB',
+    'CacheStorage',
+    'ApplicationCache',
+    'WebSql'
+  ];
+
+  var clearSiteData = function(type) {
+    return new Promise(function(resolve, reject) {
+      if (type in window) {
+        window[type].clear().then(resolve).catch(reject);
+      } else {
+        resolve();
+      }
+    });
+  };
+
+  var clearAllSiteData = function() {
+    var promises = [];
+    siteData.forEach(function(type) {
+      promises.push(clearSiteData(type));
+    });
+
+    Promise.all(promises)
+      .then(function() {
+        alert('Site data cleared successfully.');
+      })
+      .catch(function(error) {
+        console.error('Failed to clear site data:', error);
+        alert('Failed to clear site data. Please check the console for more details.');
+      });
+  };
+
+  clearAllSiteData();
+})();
