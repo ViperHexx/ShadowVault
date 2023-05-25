@@ -1,0 +1,5 @@
+javascript:(function() {
+  var darkModeCSS = document.createElement('style');
+  darkModeCSS.innerHTML = 'body { background-color: #333; color: #fff; } a { color: #99c3ff; }';
+  document.head.appendChild(darkModeCSS);
+})();
