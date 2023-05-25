@@ -1,0 +1,6 @@
+javascript:(function() {
+  var overlays = document.querySelectorAll('.overlay, .modal, .popup');
+  for (var i = 0; i < overlays.length; i++) {
+    overlays[i].style.display = 'none';
+  }
+})();
