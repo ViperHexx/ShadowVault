@@ -1,0 +1,5 @@
+javascript:(function() {
+  var text = document.body.innerText || document.body.textContent;
+  var words = text.trim().split(/\s+/).length;
+  alert('Word Count: ' + words);
+})();
